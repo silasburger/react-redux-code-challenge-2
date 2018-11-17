@@ -6,6 +6,8 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 import rootReducer from 'store/features/reducers'
 import './src/index.less';
 import App from 'components/App';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
 
 /*
 As you can see, there's no middleware included here.
@@ -17,6 +19,7 @@ let store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
   <Provider store={store}>
+  <Router
     <App />
   </Provider>,
   document.getElementById('root')
