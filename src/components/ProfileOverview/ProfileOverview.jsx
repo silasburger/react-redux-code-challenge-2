@@ -3,7 +3,7 @@ import Routes from 'components/Routes';
 import NavBar from 'components/NavBar';
 import './styles.less';
 
-class App extends Component {
+class ProfileOverview extends Component {
   render() {
     return (
       <React.Fragment>
@@ -14,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ProfileOverview;

@@ -3,15 +3,12 @@ import Routes from 'components/Routes';
 import NavBar from 'components/NavBar';
 import './styles.less';
 
-class App extends Component {
+class Companies extends Component {
   render() {
     return (
-      <React.Fragment>
-        <NavBar />
-        <Routes />
-      </React.Fragment>
+      <div>Companies</div>
     );
   }
 }
 
-export default App;
+export default Companies;

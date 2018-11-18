@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import EmployeeForm from 'components/EmployeeForm'
+import CompanyForm from 'components/CompanyForm'
+import Companies from 'components/Companies'
 import './styles.less';
 
 const propTypes = {
-	increment: PropTypes.func.isRequired,
-	decrement: PropTypes.func.isRequired,
-	resetNumberToZero: PropTypes.func.isRequired,
+	addCompany: PropTypes.func.isRequired,
+	companies: PropTypes.object.isRequired,
 };
 
 class HomePage extends Component {
 	render() {
-		const {	increment, decrement, resetNumberToZero } = this.props;
+		console.log(this.props.companies)
 		return (
 			<React.Fragment>
 				<div className="home__wrapper">
-					<div className="home__abacus">
-						<button	onClick={increment}>
-							Increment
-						</button>
-						<button	onClick={decrement}>
-							Decrement
-						</button>
-						<button	onClick={resetNumberToZero}>
-							Reset Number
-						</button>
-					</div>
-					<div>
-						Code for Homepage goes here!
-					</div>
+					<Companies />
+					<EmployeeForm companies={this.props.companies}/>
+					<CompanyForm  addCompany={this.props.addCompany}/>
 				</div>
 			</React.Fragment>
 		);

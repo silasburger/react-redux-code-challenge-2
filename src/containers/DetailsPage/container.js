@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import NumberPage from 'components/NumberPage';
+import DetailsPage from 'components/DetailsPage';
 
 const mapStateToProps = state => ({
   number: state.clickCounter.number,
 });
 
-export default connect(mapStateToProps)(NumberPage);
+export default connect(mapStateToProps)(DetailsPage);
 
