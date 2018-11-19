@@ -1,0 +1,11 @@
+.employees-wrapper {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.employees-header {
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background-color: lightgray;
+  margin: 0;
+}

@@ -1,0 +1,20 @@
+.card-wrapper {
+  border: 1px solid lightgray;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.card-wrapper > h2 {
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background-color: lightgray;
+  margin: 0;
+}
+
+.card-info-wrapper {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+}

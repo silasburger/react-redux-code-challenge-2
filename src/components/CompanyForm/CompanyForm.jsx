@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import './styles.less';
 import uuid from 'uuid/v4';
+import './styles.css';
 
+/**
+ * CompanyForm component adds company to redux state on submit
+ * The addCompany function is passed down from connected parent function to allow changes to redux state in this component
+ */
 class CompanyForm extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +19,12 @@ class CompanyForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //This function handles controls the input fields in component state
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
   }
 
+  //On submit the addCompany function is passed data along with an id (uuid) and a empty array for employees
   handleSubmit(evt) {
     evt.preventDefault();
     const id = uuid();
@@ -27,8 +33,12 @@ class CompanyForm extends Component {
   }
 
   render() {
+
+    //This variable makes sure the value in state are not emppty and not a falsy value. It controls if the submit button is enabled
+    const isDisabled = !Object.values(this.state).every(fieldValue=>fieldValue!=='' && (Boolean(+fieldValue)===true || isNaN(+fieldValue)));
     return (
-      <div>
+      <div className="company-form-wrapper">
+      <h1 className="company-form-header">Create New Company</h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>
           <input
@@ -62,7 +72,7 @@ class CompanyForm extends Component {
             id="phone"
             value={this.state.phone}
           />
-          <button>Save</button>
+          <button disabled={isDisabled}>Save</button>
         </form>
       </div>
     );

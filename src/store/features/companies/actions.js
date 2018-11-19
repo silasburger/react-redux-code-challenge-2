@@ -10,7 +10,7 @@ function addCompany(companyData) {
 function addEmployee(employeeData) {
   return {
     type: types.ADD_EMPLOYEE,
-    payload: companyData
+    payload: employeeData
   }
 }
 
